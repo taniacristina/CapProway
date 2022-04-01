@@ -9,10 +9,37 @@
     <script>
         function ola(){
             //DOM Documento Object Model
-            var nome = document.getElementById("nome").value
-            var sobrenome = document.getElementById("sobrenome").value
+            var nome = document.getElementById("nome")
+            if(nome.value == ""){
+                document.getElementById("nomecompleto").innerHTML = "informe nome";
+                nome.focus();
+                return;
+            }
 
-            document.getElementById("nomecompleto").innerHTML = nome + "" + sobrenome
+            var sobrenome = document.getElementById("sobrenome")
+            if(sobrenome.value == ""){
+                document.getElementById("nomecompleto").innerHTML = "informe sobrenome";
+                sobrenome.focus();
+                return;
+            }
+            
+            var idade = document.getElementById("idade")
+            if(idade.value == ""){
+                document.getElementById("nomecompleto").innerHTML = "informe idade";
+                idade.focus();
+                return;
+            }
+            
+            
+            if(idade.value < 18){
+                document.getElementById("nomecompleto").innerHTML = nome.value + " " + sobrenome.value + " , você tem " + idade.value + " , portanto você é menor de idade."
+                return;
+            }else{
+                document.getElementById("nomecompleto").innerHTML = nome.value + " " + sobrenome.value + " , você tem " + idade.value + " , portanto você é maior de idade."
+                return;
+            }
+            
+            
             
         }
     </script>
@@ -22,6 +49,8 @@
             width: 300px;
             margin: auto;
             background-color: gray;
+            text-align: center;
+
         }
 
         input{
@@ -38,7 +67,6 @@
 
         label{
             width: 100%;
-            text-align: center;
             color: red;
             margin-bottom: 10px;
         }
@@ -50,6 +78,7 @@
    <div>       
     <input type="text" id="nome" placeholder="informe nome" />
     <input type="text" id="sobrenome" placeholder="informe sobrenome" />
+    <input type="number" id="idade" placeholder="informe idade" />
     <hr />
     <button onclick="ola()">mostrar mensagem</button>
     <br/>
