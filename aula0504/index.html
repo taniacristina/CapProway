@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 0504</title>
+
+    <style>
+        *{
+            margin:0;
+        }
+
+        nav{
+            background-color: silver;
+            padding: 10px;
+        }
+
+        ol{
+            list-style-type: none;
+        }
+
+        li{
+            display: inline;
+            background-color: honeydew;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        li a{
+            text-decoration: none;
+            color: black;
+        }
+
+        li:hover{
+            background-color: azure;
+        }
+
+        .dpdown{
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+        }
+        .showmenu:hover .dpdwon{
+            display: block;
+        }
+    </style>
+
+</head>
+<body>
+
+    <nav>
+        <ol>
+            <li class="showmenu"><a href="cadastro.html">Cadastro</a></li>
+                <div class="dpdown">
+                    <li><a href="#">Aluno</a></li>
+                    <li><a hfre="#">Professor</a></li>
+                </div>
+            <li><a href="consulta.html">Consulta</a></li>
+        </ol>
+    </nav>
+    
+</body>
+</html>
