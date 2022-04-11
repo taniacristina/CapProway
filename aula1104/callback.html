@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function onCalcular(){
+            setTimeout(calcular,3000)
+            var n1 = parseInt(document.getElementById("n1").value)
+            var n2 = parseInt(document.getElementById("n2").value)
+
+            calcular(n1,n2,mostrar)
+        }
+        function calcular(n1,n2,mostrar){
+            let x = n1+n2
+            mostrar(x)
+        }
+
+        function mostrar(x){
+            document.getElementsByTagName("p")[0].innerHTML = `Soma: ${x}`;
+        }
+        
+    </script>
+</head>
+<body>
+    <input type="number" id="n1" placeholder="informe numero" />
+    <input type="number" id="n2" placeholder="informe numero"/>
+    <button onclick="onCalcular()">calcular</button>
+    <p></p>
+</body>
+</html>
