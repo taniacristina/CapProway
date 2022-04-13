@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./estilo/estilo.css">
+    <script src="./script/classes.js"></script>
+    <script>
+        function gravar(){
+            var nome = document.getElementsByTagName("input")[0].value
+            var fone = document.getElementsByTagName("input")[1].value
+            var email = document.getElementsByTagName("input")[2].value
+
+            let obj = new Contato(0,nome,fone,email)
+            obj.salvar()
+        }
+
+        function cancelar(){
+            document.getElementsByTagName("input")[0].value = ""
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="entrada">
+            <label>Nome</label>
+            <input type="text" placeholder="digite o nome" required>
+            <label>Phone</label>
+            <input type="number" placeholder="informe phone" required>
+            <label>Email</label>
+            <input type="email" placeholder="informe email" required>
+        </div>
+        
+
+        <div class="botoes">
+            <button class="salvar" onclick="gravar()">salvar</button>
+            <button class="cancelar" onclick="cancelar()">cancelar</button>
+        </div>
+    </div>
+   
+    
+</body>
+</html>
